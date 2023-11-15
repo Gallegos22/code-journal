@@ -14,13 +14,49 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Proza Libre"
+      rel="stylesheet" />
   </head>
   <body>
     <header>
-      <div class="container"></div>
+      <div class="container">
+        <div class="row">
+          <div class="column-full">
+            <h3 class="title">Code Journal</h3>
+          </div>
+        </div>
+      </div>
     </header>
     <main class="container">
-      <div data-view="entry-form"></div>
+      <div data-view="entry-form">
+        <form id="myForm">
+          <div class="row">
+            <div class="column-full"><h1>New Entry</h1></div>
+            <div class="column-half">
+              <img
+                id="placeholder-img"
+                src="/images/placeholder-image-square.jpg" />
+            </div>
+            <div class="column-half padding-left">
+              <label
+                >Title<br />
+                <input name="title-box" id="title-box" required /> </label
+              ><br />
+              <label
+                >Photo URL<br />
+                <input name="photoUrl" class="photo-URL" required />
+              </label>
+            </div>
+            <div class="column-full">
+              <label>Notes<br /><textarea id="notes"></textarea></label>
+            </div>
+          </div>
+          <div class="submit">
+            <button>Submit</button>
+          </div>
+        </form>
+      </div>
       <div data-view="entries" class="hidden"></div>
     </main>
     <script src="js/data.js"></script>
