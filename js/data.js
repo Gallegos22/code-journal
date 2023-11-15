@@ -1,4 +1,4 @@
-/* exported data */ /* global data */
+/* exported data */
 
 const data = {
   view: 'entry-form',
