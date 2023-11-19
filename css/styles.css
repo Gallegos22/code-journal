@@ -80,3 +80,7 @@ li {
   justify-content: flex-end;
   margin-top: 15px;
 }
+
+a {
+  color: white;
+}
