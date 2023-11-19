@@ -1,6 +1,7 @@
 /* global data */
 const $input = document.querySelector('.photo-URL');
 const $image = document.querySelector('img');
+const $entriesUnorderedList = document.querySelector('#entries-Unordered-List');
 
 $input.addEventListener('input', function (event) {
   $image.src = $input.value;
@@ -25,4 +26,44 @@ $submit.addEventListener('submit', function (event) {
 
   const form = document.getElementById('myForm');
   form.reset();
+});
+
+function renderEntry(entry) {
+  const newLi = document.createElement('li');
+  const div1 = document.createElement('div');
+  div1.className = 'row';
+  newLi.appendChild(div1);
+
+  const div2 = document.createElement('div');
+  div2.className = 'column-half';
+  div1.appendChild(div2);
+  const img1 = document.createElement('img');
+  img1.className = 'picture';
+  img1.setAttribute('src', entry.imageUrl);
+  div2.appendChild(img1);
+
+  const div3 = document.createElement('div');
+  div3.className = 'column-half';
+  div1.appendChild(div3);
+  const div4 = document.createElement('div');
+  div4.className = 'info';
+  div3.appendChild(div4);
+
+  const newHeading1 = document.createElement('h2');
+  newHeading1.textContent = entry.title;
+  const newContext1 = document.createElement('p');
+  newContext1.textContent = entry.notes;
+  div4.appendChild(newHeading1);
+  div4.appendChild(newContext1);
+
+  return newLi;
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  for (let i = 0; i < data.entries.length; i++) {
+    if (data.entries[i]) {
+      const $entry = renderEntry(data.entries[i]);
+      $entriesUnorderedList.prepend($entry);
+    }
+  }
 });

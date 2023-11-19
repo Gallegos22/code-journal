@@ -12,6 +12,7 @@ h3.title {
 
 img {
   width: 100%;
+  border-radius: 4px;
 }
 
 .column-full {
@@ -51,8 +52,28 @@ textarea {
 button {
   color: white;
   background-color: rgb(74, 5, 103);
+  border-radius: 4px;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 li {
   list-style-type: none;
+}
+
+.entry-title {
+  margin-left: 30px;
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.new-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
