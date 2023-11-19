@@ -26,6 +26,11 @@ $submit.addEventListener('submit', function (event) {
 
   const form = document.getElementById('myForm');
   form.reset();
+
+  const $entry = renderEntry(newData);
+  $entriesUnorderedList.prepend($entry);
+  viewSwap('entries');
+  toggleNoEntries();
 });
 
 function renderEntry(entry) {
@@ -60,6 +65,7 @@ function renderEntry(entry) {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  console.log(data.entries);
   for (let i = 0; i < data.entries.length; i++) {
     if (data.entries[i]) {
       const $entry = renderEntry(data.entries[i]);
@@ -67,3 +73,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 });
+
+function toggleNoEntries() {
+  const $paragraph = document.querySelector('#noEntriesText');
+  console.log($paragraph);
+  if (data.entries.length) {
+    $paragraph.classList.add('hidden');
+  } else {
+    $paragraph.classList.remove('hidden');
+  }
+}
+
+function viewSwap(viewName) {
+  const $dataView = document.querySelectorAll('[data-view]');
+  for (let i = 0; i < $dataView.length; i++) {
+    const view = $dataView[i];
+    if (view.dataset.view === viewName) {
+      view.classList.remove('hidden');
+    } else {
+      view.classList.add('hidden');
+    }
+  }
+  data.view = viewName;
+}
