@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 function toggleNoEntries() {
   const $paragraph = document.querySelector('#noEntriesText');
-  console.log($paragraph);
   if (data.entries.length) {
     $paragraph.classList.add('hidden');
   } else {
