@@ -83,4 +83,10 @@ li {
 
 a {
   color: white;
+  text-decoration: none;
+}
+
+.fa-pencil {
+  float: right;
+  font-size: 16px;
 }
